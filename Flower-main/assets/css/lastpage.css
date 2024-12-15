@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Modern font */
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5f3ff; /* Light blue color */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px; /* Padding for smaller devices */
+    max-width: 100%; /* Full width on smaller devices */
+}
+
+.card {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease;
+}
+
+.card h2 {
+    margin-bottom: 20px;
+}
+
+.date-time {
+    font-size: 18px;
+    color: #333; /* Darker color for contrast */
+}
+
+/* New styles for proper spacing */
+p {
+    margin: 20px 0; /* Add margin to the paragraph */
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Hover effect */
+}
+
+.details-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    margin: 20px 0;
+}
+
+.detail-box {
+    flex: 1 1 30%; /* Flex grow and shrink with a basis of 30% */
+    text-align: center;
+    margin: 10px; /* Margin for spacing */
+    background-color: #f9f9f9; /* Light background for detail boxes */
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 120px; /* Set a max-width to keep boxes aligned */
+}
+
+.detail-box img {
+    max-width: 100%; /* Use 100% to make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    margin-bottom: 10px; /* Add margin below the image */
+}
+
+@media (max-width: 768px) {
+    .detail-box {
+        flex: 1 1 90%; /* Full width on mobile */
+        margin: 10px 0; /* Vertical margin */
+    }
+}
+
+.detail-box img:hover {
+    transform: scale(1.1); /* Slightly larger scale on hover */
+}
+
+.btn a {
+    text-decoration: none;
+    color: #111;
+    background: #fff;
+    padding: 10px 25px;
+    border-radius: 8px;
+    box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
+    transition: box-shadow 0.3s ease; /* Smooth transition for the glow effect */
+  }
+  
+  /* Subtle glow effect for Yes button */
+  .btn a:hover {
+    box-shadow: 0 0 5px #66ff66, 0 0 10px #66ff66, 0 0 15px #66ff66; /* Lighter green glow effect */
+  }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Reduced padding */
+    }
+
+    .details-row {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .detail-box {
+        flex: 1 1 90%; /* Full width on mobile */
+        margin: 10px 0; /* Vertical margin */
+    }
+
+    .btn a {
+        width: 100%; /* Full width button on mobile */
+        padding: 12px; /* Increased padding for better touch target */
+    }
+}
+
+@media (max-width: 480px) {
+    .date-time {
+        font-size: 16px; /* Smaller font size for mobile */
+    }
+
+    .card h2 {
+        font-size: 24px; /* Smaller heading for mobile */
+    }
+}

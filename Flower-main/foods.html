@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/img/flowers.png" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/food.css" />
+  <title>Ready for a Date?</title>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="tenor-gif-embed" data-postid="253027946666209433" data-share-method="host" data-aspect-ratio="1.37853"
+      data-width="100%">
+      <a
+        href="https://tenor.com/view/mochi-cat-mochi-and-goma-goma-and-peach-mochi-mochi-peach-cat-gif-gif-253027946666209433"></a>
+      <a href="https://tenor.com/search/mochi-gifs"></a>
+    </div>
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+    <h1 class="text-center">Pick Your Food! 🍽️</h1>
+
+    <h3 class="text-center">Select your food:</h3>
+    <div class="food-grid" id="foodOptions">
+      <!-- Food options will be dynamically inserted here based on location -->
+    </div>
+
+    <script>
+      const locationName = localStorage.getItem("selectedLocationName");
+
+      const foodOptions = {
+        "SM Baliwag": [
+          { name: "Starbucks", img: "assets/img/sb.jpg" },
+          { name: "Jollibee", img: "assets/img/jb.jpg" },
+          { name: "KFC", img: "assets/img/kfc.jpg" },
+          { name: "Me", img: "assets/img/me.jpg" }
+        ],
+        "Giffs House": [
+          { name: "Special Fried Rice", img: "assets/img/special.jpg" },
+          { name: "Chicken Joy", img: "assets/img/chicken.jpg" },
+          { name: "Snack & Dessert", img: "assets/img/snacks.jpg" },
+          { name: "Me", img: "assets/img/me.jpg" }
+        ],
+        "Nature Trip": [
+          { name: "Sandwich", img: "assets/img/sw.jpg" },
+          { name: "Fruit Salad", img: "assets/img/fruit.jpg" },
+          { name: "Grilled Chicken", img: "assets/img/grilled.jpg" },
+          { name: "Me", img: "assets/img/me.jpg" }
+        ]
+      };
+
+      const selectedFoodOptions = foodOptions[locationName] || [];
+
+      const foodGrid = document.getElementById("foodOptions");
+
+      selectedFoodOptions.forEach(food => {
+        const foodDiv = document.createElement("div");
+        foodDiv.innerHTML = `
+          <img src="${food.img}" alt="${food.name}" class="img-fluid" onclick="saveFood('${food.name}', '${food.img}')" style="cursor: pointer;">
+          <p class="text-center">${food.name}</p>
+        `;
+        foodGrid.appendChild(foodDiv);
+      });
+
+      function saveFood(foodName, foodImage) {
+        // Save the food name and image URL in localStorage
+        localStorage.setItem("selectedFoodName", foodName);
+        localStorage.setItem("selectedFoodImage", foodImage);
+
+        // Redirect to the activities page
+        window.location.href = 'activity.html';
+
+      }
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </div>
+
+</body>
+
+</html>

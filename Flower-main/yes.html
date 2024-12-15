@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/img/flowers.png" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/date.css" />
+  <title>Ready for a Date?</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="tenor-gif-embed" data-postid="253027946666209433" data-share-method="host" data-aspect-ratio="1.37853"
+      data-width="100%">
+      <a
+        href="https://tenor.com/view/mochi-cat-mochi-and-goma-goma-and-peach-mochi-mochi-peach-cat-gif-gif-253027946666209433"></a>
+      <a href="https://tenor.com/search/mochi-gifs"></a>
+    </div>
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <h1>Picking a date... when should we go? 🗓️💕</h1>
+
+    <form id="dateTimeForm">
+      <label for="dateTimePicker">Select a date and time:</label>
+      <input type="datetime-local" id="dateTimePicker" name="dateTimePicker" required>
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      const today = new Date();
+      const minDateTime = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1, 0, 0);
+      const formattedMinDateTime = minDateTime.toISOString().slice(0, 16);
+      document.getElementById('dateTimePicker').setAttribute('min', formattedMinDateTime);
+
+      document.getElementById('dateTimeForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Get the selected date and time value from the input field
+        const selectedDateTime = document.getElementById('dateTimePicker').value;
+
+        // Save the selected date and time to localStorage
+        localStorage.setItem('selectedDateTime', selectedDateTime);
+
+        // Redirect to location.html after saving
+        window.location.href = 'location.html';
+      });
+    </script>
+
+</body>
+
+</html>

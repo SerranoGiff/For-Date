@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/img/flowers.png" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/location.css" />
+    <title>Ready for a Date?</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="tenor-gif-embed" data-postid="253027946666209433" data-share-method="host"
+            data-aspect-ratio="1.37853" data-width="100%">
+            <a
+                href="https://tenor.com/view/mochi-cat-mochi-and-goma-goma-and-peach-mochi-mochi-peach-cat-gif-gif-253027946666209433"></a>
+            <a href="https://tenor.com/search/mochi-gifs"></a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+        <h1 class="text-center">Picking a location... where should we go? 🗓️💕</h1>
+
+        <h3 class="text-center">Select a location:</h3>
+        <div class="location-grid">
+            <div>
+                <img src="sm.jpg" alt="Location 1" class="img-fluid"
+                    onclick="saveLocation('SM Baliwag', 'sm.jpg')" style="cursor: pointer;">
+                <p class="text-center">SM Baliwag</p>
+            </div>
+            <div>
+                <img src="assets/img/house.jpg" alt="Location 2" class="img-fluid"
+                    onclick="saveLocation('Giffs House', 'assets/img/house.jpg')" style="cursor: pointer;">
+                <p class="text-center">Giff's House</p>
+            </div>
+            <div>
+                <img src="assets/img/nature.jpg" alt="Location 3" class="img-fluid"
+                    onclick="saveLocation('Nature Trip', 'assets/img/nature.jpg')" style="cursor: pointer;">
+                <p class="text-center">Nature Trip</p>
+            </div>
+        </div>
+
+        <script>
+            function saveLocation(locationName, imageUrl) {
+                // Save the location name and image URL in localStorage
+                localStorage.setItem("selectedLocationName", locationName);
+                localStorage.setItem("selectedLocationImage", imageUrl);
+
+                // Redirect to foods.html
+                window.location.href = 'foods.html';
+            }
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </div>
+</body>
+
+</html>

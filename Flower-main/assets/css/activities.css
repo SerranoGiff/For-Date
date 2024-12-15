@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+  body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5f3ff; /* Light blue color */
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+    margin: 20px;
+  }
+  
+  .container .tenor-gif-embed {
+    max-width: 200px;
+  }
+  
+  .container h1 {
+    color: #000000; /* Dark text color for the heading */
+  }
+  
+  h3 {
+    color: #343a40; /* Dark text color for the heading */
+  }
+  
+  .activity-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default: 4 equal columns */
+    gap: 10px;
+    justify-items: center;
+  }
+  
+  .activity-grid div {
+    text-align: center;
+  }
+  
+  .activity-grid img {
+    max-width: 150px;
+    transition: transform 0.3s ease;
+  }
+  
+  .activity-grid img:hover {
+    transform: scale(1.1);
+  }
+  
+  .img-fluid {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.2s;
+  }
+  
+  .img-fluid:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  
+  .text-center {
+    text-align: center;
+    margin-top: 5px;
+    color: #495057;
+  }
+  
+  /* Media Queries for responsiveness */
+  
+  /* For screens with a width of 1024px or less (3 columns) */
+  @media (max-width: 1024px) {
+    .activity-grid {
+      grid-template-columns: repeat(3, 1fr); /* Change to 3 columns */
+    }
+  }
+  
+  /* For screens with a width of 768px or less (2 columns) */
+  @media (max-width: 768px) {
+    .activity-grid {
+      grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+    }
+  }
+  
+  /* For screens with a width of 480px or less (1 column, stacked) */
+  @media (max-width: 480px) {
+    .activity-grid {
+      grid-template-columns: 1fr; /* Single column layout */
+    }
+  
+    .activity-grid img {
+      max-width: 100px; /* Reduce the image size on small screens */
+    }
+  }
+  

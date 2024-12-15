@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.card {
+    background-color: #343a40;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    text-align: center;
+    width: 400px;
+    position: relative; /* Relative positioning for the card */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.btn {
+    width: 120px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}

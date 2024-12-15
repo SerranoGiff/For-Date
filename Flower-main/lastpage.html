@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/img/flowers.png" type="image/x-icon" />
+    <link rel="stylesheet" href="lastpage.css" />
+    <title>Your Date Details</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h2 class="text-center"><strong>YOUR DATE DETAILS</strong></h2>
+
+            <!-- Date and Time -->
+            <p>
+                Your date is on: <span id="selectedDate"></span> at
+                <span id="selectedTime"></span>
+            </p>
+
+            <!-- Location, Food, and Activities Side-by-Side -->
+            <div class="details-row">
+                <!-- Location Section -->
+                <div class="detail-box">
+                    <h5>Location:</h5>
+                    <img id="locationImage" src="https://via.placeholder.com/150" alt="Selected Location" />
+                    <p id="locationName"></p>
+                </div>
+            
+                <!-- Food Section -->
+                <div class="detail-box">
+                    <h5>Food:</h5>
+                    <img id="chosenFoodImage" src="https://via.placeholder.com/150" alt="Chosen Food" />
+                    <p id="chosenFood"></p>
+                </div>
+            
+                <!-- Activities Section -->
+                <div class="detail-box">
+                    <h5>Activities:</h5>
+                    <img id="chosenActivityImage" src="https://via.placeholder.com/150" alt="Planned Activities" />
+                    <p id="chosenActivity"></p>
+                </div>
+            </div>
+            
+
+            <p><strong>Please Screenshot this and send it to me!</strong></p>
+
+            <!-- Next Button -->
+            <div class="text-center btn">
+                <a href="Gift.html">Next Page</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Retrieve the saved date and time from localStorage
+        const selectedDateTime = localStorage.getItem("selectedDateTime");
+        const locationName = localStorage.getItem("selectedLocationName");
+        const locationImage = localStorage.getItem("selectedLocationImage");
+
+        // Retrieve the selected food name and image from localStorage
+        const selectedFoodName = localStorage.getItem('selectedFoodName');
+        const selectedFoodImage = localStorage.getItem('selectedFoodImage');
+
+        // Retrieve the selected activity name and image from localStorage
+        const selectedActivityName = localStorage.getItem('selectedActivityName');
+        const selectedActivityImage = localStorage.getItem('selectedActivityImage');
+
+        // Parse the date and time
+        if (selectedDateTime) {
+            const dateTime = new Date(selectedDateTime);
+            const date = dateTime.toLocaleDateString();
+            const time = dateTime.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+            });
+
+            // Display the date and time on the page
+            document.getElementById("selectedDate").textContent = date;
+            document.getElementById("selectedTime").textContent = time;
+        }
+
+        // Display the saved location details
+        document.getElementById("locationName").textContent = locationName;
+        document.getElementById("locationImage").src = locationImage;
+
+        // Display the saved food details
+        document.getElementById("chosenFood").textContent = selectedFoodName;
+        document.getElementById("chosenFoodImage").src = selectedFoodImage;
+
+        // Display the saved activity details
+        document.getElementById("chosenActivity").textContent = selectedActivityName;
+        document.getElementById("chosenActivityImage").src = selectedActivityImage;
+    </script>
+
+</body>
+
+</html>

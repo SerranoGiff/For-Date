@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5f3ff; /* Light blue color */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  margin: 20px;
+}
+
+.container .tenor-gif-embed {
+  max-width: 200px;
+}
+
+.container h1 {
+  color: #000000; /* Dark text color for the heading */
+}
+
+h3 {
+  color: #343a40; /* Dark text color for the heading */
+}
+
+.location-grid {
+  display: grid; /* Use CSS grid for layout */
+  grid-template-columns: repeat(3, 1fr); /* Default: three equal columns */
+  gap: 10px; /* Space between items */
+  justify-items: center; /* Center items in grid cells */
+}
+
+.img-fluid {
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners for images */
+  transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.img-fluid:hover {
+  transform: scale(1.05); /* Scale image slightly on hover */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.text-center {
+  text-align: center; /* Center text under images */
+  margin-top: 5px; /* Space above the text */
+  color: #495057; /* Slightly lighter color for the text */
+}
+
+/* Media Queries for responsiveness */
+
+/* For screens with a width of 1024px or less (2 columns) */
+@media (max-width: 1024px) {
+  .location-grid {
+    grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+  }
+}
+
+/* For screens with a width of 768px or less (1 column, stacked) */
+@media (max-width: 768px) {
+  .location-grid {
+    grid-template-columns: 1fr; /* Change to 1 column */
+  }
+
+  .img-fluid {
+    max-width: 200px; /* Reduce the image size on smaller screens */
+  }
+}
